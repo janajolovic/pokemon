@@ -10,7 +10,7 @@
 .header {
   width: 100%;
   height: 70px;
-  background-color: #bd0000;
+  background-color: #c70d0d;
   padding-left: 20px;
   display: flex;
   justify-content: flex-start;
@@ -37,12 +37,44 @@
   width: 20%;
   height: 300px;
   margin: 20px 5px;
-  background-color: #9aff9a;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 25px;
+  position: relative;
+  transition: all .5s ease-in-out;
+}
+
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: none;
+  transition: .5s ease;
+  border-radius: 25px;
+}
+
+.card:hover .card__overlay {
+  opacity: 1;
+}
+
+.overlay__text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .card img {
@@ -57,7 +89,15 @@
 	background-color: #f4f4f4;
 }
 
+.card__overlay .steel {
+	background-color: #f4f4f4;
+}
+
 .fire {
+	background-color: #FDDFDF;
+}
+
+.fire .card__overlay{
 	background-color: #FDDFDF;
 }
 
@@ -65,7 +105,15 @@
 	background-color: #DEFDE0;
 }
 
+.card__overlay .grass {
+	background-color: #DEFDE0;
+}
+
 .electric {
+	background-color: #FCF7DE;
+}
+
+.card__overlay .electric {
 	background-color: #FCF7DE;
 }
 
@@ -73,7 +121,15 @@
 	background-color: #DEF3FD;
 }
 
+.card__overlay .water, .ice {
+	background-color: #DEF3FD;
+}
+
 .ground {
+	background-color: #f4e7da;
+}
+
+.card__overlay .ground {
 	background-color: #f4e7da;
 }
 
@@ -81,7 +137,15 @@
 	background-color: #d5d5d4;
 }
 
+.card__overlay .rock {
+	background-color: #d5d5d4;
+}
+
 .fairy {
+	background-color: #fceaff;
+}
+
+.card__overlay .fairy {
 	background-color: #fceaff;
 }
 
@@ -89,7 +153,15 @@
 	background-color: #98d7a5;
 }
 
+.card__overlay .poison {
+	background-color: #98d7a5;
+}
+
 .bug {
+	background-color: #f8d5a3;
+}
+
+.card__overlay .bug {
 	background-color: #f8d5a3;
 }
 
@@ -97,11 +169,23 @@
 	background-color: #97b3e6;
 }
 
+.card__overlay .dragon {
+	background-color: #97b3e6;
+}
+
 .psychic {
 	background-color: #eaeda1;
 }
 
+.card__overlay .psychic {
+	background-color: #eaeda1;
+}
+
 .flying {
+	background-color: #F5F5F5;
+} 
+
+.card__overlay .flying {
 	background-color: #F5F5F5;
 }
 
@@ -109,6 +193,14 @@
 	background-color: #E6E0D4;
 }
 
+.card__overlay .fighting {
+	background-color: #E6E0D4;
+}
+
 .normal {
+	background-color: #F5F5F5;
+}
+
+.card__overlay .normal {
 	background-color: #F5F5F5;
 }
