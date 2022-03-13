@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Pokemon from './Pokemon'
+import { useNavigate } from 'react-router-dom'
 
 export interface Props {
   pokemon: any,
@@ -7,33 +9,22 @@ export interface Props {
 }
 
 const Card = (props: Props) => {
+  let navigate = useNavigate();
 
-  const [pokemon, setPokemon] = useState()
-
-  const getPokemon = async () => {
-    try { 
-      let res: any = await axios.get(props.pokemon.url)
-      console.log(res.data)
-      setPokemon(res.data)
-    } catch (err) {
-      console.log(err)
-    }
+  const getPokemon = () => {
+    navigate(`/${props.pokemon.name}`)
   }
 
-  useEffect(() => {
-    getPokemon()
-  }, [])
-
   return (
-    <div className='card fire'>
+    <div className='card fire' onClick={getPokemon}>
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${props.id + 1}.svg`} alt="" />
       <h1>{props.pokemon.name}</h1>
 
-      <div className="card__overlay">
+      {/* <div className="card__overlay">
         <div className="overlay__text">
           <h1>{props.pokemon.name}</h1>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
