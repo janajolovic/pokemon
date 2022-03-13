@@ -16,6 +16,7 @@
   justify-content: flex-start;
   align-items: center;
   color: white;
+  font-weight: 500;
 }
 
 .header img {
@@ -227,4 +228,9 @@
   height: 60vh;
   border-radius: 25px;
   box-shadow: 0px 5px 8px 0px gray;
+}
+
+.pokemon_card img {
+  max-height: 80%;
+  min-height: 200px;
 }

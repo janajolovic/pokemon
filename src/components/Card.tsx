@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import Pokemon from './Pokemon'
+import axios, { AxiosResponse } from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 export interface Props {
@@ -15,16 +14,24 @@ const Card = (props: Props) => {
     navigate(`/${props.pokemon.name}`)
   }
 
+  const [pokemonType, setPokemonType] = useState<string[]>([])
+  const getPokemonType = async () => {
+    try { 
+      let res: AxiosResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon/${props.id + 1}`)
+      let data = res.data
+      setPokemonType(data.types.map((el: any) => {return el.type.name}))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  useEffect(() => {
+    getPokemonType()
+}, [])
+
   return (
-    <div className='card fire' onClick={getPokemon}>
+    <div className={`card ${pokemonType[0]}`} onClick={getPokemon}>
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${props.id + 1}.svg`} alt="" />
       <h1>{props.pokemon.name}</h1>
-
-      {/* <div className="card__overlay">
-        <div className="overlay__text">
-          <h1>{props.pokemon.name}</h1>
-        </div>
-      </div> */}
     </div>
   )
 }
