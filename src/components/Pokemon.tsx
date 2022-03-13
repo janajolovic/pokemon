@@ -40,7 +40,7 @@ const Pokemon = () => {
             <h1>{pokemon.name}</h1>
             <h3>Height: {pokemon.height}</h3>
             <h3>Weight: {pokemon.weight}</h3>
-            <h3>{pokemon.types}</h3>
+            <h3>Types: {pokemon.types?.toString()}</h3>
         </div>
     </div>
   )
