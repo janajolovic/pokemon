@@ -1,13 +1,16 @@
 import React from 'react'
 
 export interface Props {
-  pokemon: string,
+  pokemon: any,
+  id: number
 }
 
 const Card = (props: Props) => {
   return (
     <div className='card'>
-        <img src={`https://img.pokemondb.net/artwork/large/${props.pokemon}.jpg`} alt="" />
+      {console.log(props.pokemon.name)}
+      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${props.id + 1}.svg`} alt="" />
+      <h1>{props.pokemon.name}</h1>
     </div>
   )
 }

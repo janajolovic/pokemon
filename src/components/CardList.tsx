@@ -9,7 +9,7 @@ const CardList = () => {
   const getData = async () => {
     try {
         let res: any = await axios.get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
-        setPokemons(res.data)
+        setPokemons(res.data.results)
         console.log(pokemons)
         console.log(res.data)
     } catch (err) {
@@ -23,7 +23,11 @@ const CardList = () => {
   
   return (
     <div className='card_list'>
-        <Card pokemon="pikachu"/>
+      {pokemons.map((pokemon, i) => {
+        return (
+          <Card pokemon={pokemon} id={i} key={i}/>
+        )
+      })}
     </div>
   )
 }
