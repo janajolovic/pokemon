@@ -17,18 +17,24 @@ const CardList = () => {
     }
   }
 
+  const loadMore = () => {
+    
+  }
+
   useEffect(() => {
       getData()
   }, [])
   
   return (
+    <div>
     <div className='card_list'>
       {pokemons.map((pokemon, i) => {
         return (
           <Card pokemon={pokemon} id={i} key={i}/>
         )
       })}
-      {/* <FontAwesomeIcon icon={faCoffee} /> */}
+      </div>
+      <button onClick={loadMore} className='load_more'>Load more...</button>
     </div>
   )
 }
