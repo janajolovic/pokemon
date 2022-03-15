@@ -8,6 +8,7 @@ export interface Props {
 }
 
 const Card = (props: Props) => {
+  let [name, setName] = useState<string>("")
   let navigate = useNavigate();
 
   const getPokemon = () => {
@@ -19,6 +20,7 @@ const Card = (props: Props) => {
     try { 
       let res: AxiosResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon/${props.id + 1}`)
       let data = res.data
+      setName(data.name)
       setPokemonType(data.types.map((el: any) => {return el.type.name}))
     } catch (err) {
       console.log(err)
@@ -31,7 +33,7 @@ const Card = (props: Props) => {
   return (
     <div className={`card ${pokemonType[0]}`} onClick={getPokemon}>
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${props.id + 1}.svg`} alt="" />
-      <h1>{props.pokemon.name}</h1>
+      <h1>{name}</h1>
     </div>
   )
 }
