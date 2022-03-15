@@ -249,3 +249,11 @@
 .load_more:hover {
   background-color: #ac0d0d;
 }
+
+.pokemon_info h1 {
+  margin-bottom: 10px;
+}
+
+.pokemon_info h3 {
+  margin: 5px 0px;
+}

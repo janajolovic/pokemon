@@ -12,7 +12,7 @@ const Card = (props: Props) => {
   let navigate = useNavigate();
 
   const getPokemon = () => {
-    navigate(`/${props.pokemon.name}`)
+    navigate(`/${name}`)
   }
 
   const [pokemonType, setPokemonType] = useState<string[]>([])

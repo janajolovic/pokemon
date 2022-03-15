@@ -9,7 +9,8 @@ const Pokemon = () => {
       id: 0,
       height: 0,
       weight: 0,
-      types: ["normal"]
+      types: ["normal"],
+      abilities: [""]
   })
 
   const pokemon_name = useParams().name;
@@ -23,7 +24,8 @@ const Pokemon = () => {
         id: data.id,
         height: data.height,
         weight: data.weight,
-        types: data.types.map((el: any) => {return el.type.name})
+        types: data.types.map((el: any) => {return el.type.name}),
+        abilities: data.abilities.map((el: any) => {return el.ability.name})
     })
     } catch (err) {
       console.log(err)
@@ -41,6 +43,7 @@ const Pokemon = () => {
             <h3>Height: {pokemon.height}</h3>
             <h3>Weight: {pokemon.weight}</h3>
             <h3>Types: {pokemon.types?.toString()}</h3>
+            <h3>Abilities: {pokemon.abilities?.toString()}</h3>
         </div>
     </div>
   )
