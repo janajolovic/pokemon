@@ -4,6 +4,7 @@ export default interface PokemonInterface {
     height?: number,
     weight?: number,
     types?: string[]
-    abilities?: string[]
-    // abilities: [],
+    abilities?: string[],
+    stats?: string[],
+    statsValue?: number[]
 }

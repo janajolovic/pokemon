@@ -219,6 +219,7 @@
 }
 
 .pokemon_card {
+  padding: 20px;
   margin: auto;
   margin-top: 10vh;
   display: flex;
@@ -251,9 +252,9 @@
 }
 
 .pokemon_info h1 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.pokemon_info h3 {
-  margin: 5px 0px;
+.pokemon_info h4 {
+  margin: 10px 0px;
 }
