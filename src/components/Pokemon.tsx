@@ -42,6 +42,7 @@ const Pokemon = () => {
   return (
     <div className="pokemon_background">
       <div className={`pokemon_card ${pokemon.types? pokemon.types[0]: "normal"}`}>
+          <div className='pokemon_card_main'>
           <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} alt="" />
           <div className='pokemon_info'>
               <h1>{pokemon.name}</h1>
@@ -51,6 +52,17 @@ const Pokemon = () => {
               <h4>Abilities: {pokemon.abilities?.toString()}</h4>
               <h4>Total stats: {pokemon.statsValue?.reduce((prevState, curState) => prevState + curState)}</h4>
           </div>
+          </div>
+          <table>
+            <thead>
+              <th>anfsdan</th>
+              <th>anfsdan</th>
+            </thead>
+            <tbody>
+              <td>sdfsad</td>
+              <td>sdfsad</td>
+            </tbody>
+          </table>
       </div>
     </div>
   )
