@@ -234,7 +234,7 @@
 
 .pokemon_card_main {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -242,6 +242,14 @@
 .pokemon_card img {
   max-height: 80%;
   min-height: 150px;
+  margin-right: 30px;
+}
+
+.pokemon_card h1 {
+  text-transform: uppercase;
+  color: #c70d0d;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
 .load_more {
@@ -263,6 +271,10 @@
   margin-bottom: 15px;
 }
 
+.pokemon_info {
+  margin-left: 50px;
+}
+
 .pokemon_info h4 {
   margin: 10px 0px;
 }
@@ -280,9 +292,17 @@
 .pokemon_card table {
   display: block;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .pokemon_card table thead th, td {
   border: 1px solid black;
   padding: 10px;
+  text-align: center;
+}
+
+.pokemon_card table thead th {
+  padding: 10px;
+  background-color: #c70d0d;
+  color: white;
 }

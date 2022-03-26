@@ -55,12 +55,16 @@ const Pokemon = () => {
           </div>
           <table>
             <thead>
-              <th>anfsdan</th>
-              <th>anfsdan</th>
+              {pokemon.stats?.map(stat => {
+                return <th>{stat}</th>
+              })}
             </thead>
             <tbody>
-              <td>sdfsad</td>
-              <td>sdfsad</td>
+              <tr>
+              {pokemon.statsValue?.map(stat => {
+                return <td>{stat}</td>
+              })}
+              </tr>
             </tbody>
           </table>
       </div>
