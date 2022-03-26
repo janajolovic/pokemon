@@ -40,16 +40,18 @@ const Pokemon = () => {
 }, [])
 
   return (
-    <div className={`pokemon_card ${pokemon.types? pokemon.types[0]: "normal"}`}>
-        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} alt="" />
-        <div className='pokemon_info'>
-            <h1>{pokemon.name}</h1>
-            <h4>Height: {pokemon.height}</h4>
-            <h4>Weight: {pokemon.weight}</h4>
-            <h4>Types: {pokemon.types?.toString()}</h4>
-            <h4>Abilities: {pokemon.abilities?.toString()}</h4>
-            <h4>Total stats: {pokemon.statsValue?.reduce((prevState, curState) => prevState + curState)}</h4>
-        </div>
+    <div className="pokemon_background">
+      <div className={`pokemon_card ${pokemon.types? pokemon.types[0]: "normal"}`}>
+          <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} alt="" />
+          <div className='pokemon_info'>
+              <h1>{pokemon.name}</h1>
+              <h4>Height: {pokemon.height}</h4>
+              <h4>Weight: {pokemon.weight}</h4>
+              <h4>Types: {pokemon.types?.toString()}</h4>
+              <h4>Abilities: {pokemon.abilities?.toString()}</h4>
+              <h4>Total stats: {pokemon.statsValue?.reduce((prevState, curState) => prevState + curState)}</h4>
+          </div>
+      </div>
     </div>
   )
 }

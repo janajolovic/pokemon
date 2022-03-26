@@ -221,7 +221,7 @@
 .pokemon_card {
   padding: 20px;
   margin: auto;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -257,4 +257,14 @@
 
 .pokemon_info h4 {
   margin: 10px 0px;
+}
+
+.pokemon_background {
+  background-color: blue;
+  padding-top: 10vh;
+  height: 100vh;
+  background: url("https://i.pinimg.com/736x/90/3c/e8/903ce82d065d12a760eeafe2aec9935a--cool-pokemon-wallpapers-pokemon-backgrounds.jpg") rgba(34, 29, 29, 0.802);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-blend-mode: multiply;
 }
