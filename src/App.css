@@ -230,6 +230,7 @@
   height: 70vh;
   border-radius: 25px;
   box-shadow: 0px 5px 8px 0px gray;
+  position: relative;
 }
 
 .pokemon_card_main {
@@ -237,11 +238,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: absolute;
+  top: 70px;
 }
 
 .pokemon_card img {
-  max-height: 80%;
-  min-height: 150px;
+  width: 200px;
+  height: 200px;
   margin-right: 30px;
 }
 
@@ -292,7 +295,8 @@
 .pokemon_card table {
   display: block;
   border-collapse: collapse;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 50px;
 }
 
 .pokemon_card table thead th, td {
